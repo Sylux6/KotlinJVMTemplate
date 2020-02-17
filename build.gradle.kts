@@ -25,10 +25,15 @@ repositories {
 }
 
 dependencies {
+    // Core
     implementation(kotlin("stdlib-jdk8"))
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlinVersion")
-    implementation("ch.qos.logback:logback-classic:1.2.3")
 
+    // Logging
+    implementation("ch.qos.logback:logback-classic:1.2.3")
+    implementation("io.github.microutils:kotlin-logging:1.7.8")
+
+    // Test
     testImplementation("org.spekframework.spek2:spek-dsl-jvm:$spekVersion")
     testRuntimeOnly("org.spekframework.spek2:spek-runner-junit5:$spekVersion")
     testRuntimeOnly("org.jetbrains.kotlin:kotlin-reflect:$kotlinVersion")
