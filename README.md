@@ -9,5 +9,5 @@ and CI working with GitHub Actions.
 - [Mockk](https://github.com/mockk/mockk) - Mock library
 - [Atrium](https://github.com/robstoll/atrium) - Assertion library
 - [Shadow](https://github.com/johnrengelman/shadow) - JAR building plugin
-- [Logback](https://github.com/qos-ch/logback) - Log implementation
+- [Logback](https://github.com/qos-ch/logback) + [kotlin-logging](https://github.com/MicroUtils/kotlin-logging) - Log implementation
 - [ktlint](https://github.com/pinterest/ktlint) - Kotlin linter plugin
