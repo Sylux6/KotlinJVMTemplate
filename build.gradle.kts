@@ -1,4 +1,8 @@
+val atriumVersion = "0.9.1"
+val kotlinLoggingVersion = "1.7.8"
 val kotlinVersion = "1.3.61"
+val logbackVersion = "1.2.3"
+val mockkVersion = "1.9.3"
 val spekVersion = "2.0.9"
 
 plugins {
@@ -30,15 +34,15 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlinVersion")
 
     // Logging
-    implementation("ch.qos.logback:logback-classic:1.2.3")
-    implementation("io.github.microutils:kotlin-logging:1.7.8")
+    implementation("ch.qos.logback:logback-classic:$logbackVersion")
+    implementation("io.github.microutils:kotlin-logging:$kotlinLoggingVersion")
 
     // Test
     testImplementation("org.spekframework.spek2:spek-dsl-jvm:$spekVersion")
     testRuntimeOnly("org.spekframework.spek2:spek-runner-junit5:$spekVersion")
     testRuntimeOnly("org.jetbrains.kotlin:kotlin-reflect:$kotlinVersion")
-    testImplementation("io.mockk:mockk:1.9.3")
-    testImplementation("ch.tutteli.atrium:atrium-fluent-en_GB:0.9.1")
+    testImplementation("io.mockk:mockk:$mockkVersion")
+    testImplementation("ch.tutteli.atrium:atrium-fluent-en_GB:$atriumVersion")
 }
 
 tasks {
@@ -54,8 +58,13 @@ tasks {
         options.encoding = "UTF-8"
     }
     shadowJar {
+	archiveName = "MyApp.jar"
         manifest {
             attributes["Main-Class"] = "com.github.sylux6.kotlinjvmtemplate.AppKt"
+        }
+        // Exclude dependencies if there are ClassNotFoundError with them
+        minimize {
+            exclude(dependency("ch.qos.logback:logback-classic"))
         }
     }
 }
