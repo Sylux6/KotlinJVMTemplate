@@ -1,17 +1,17 @@
-val atriumVersion = "0.9.1"
-val kotlinLoggingVersion = "1.7.8"
-val kotlinVersion = "1.3.61"
+val atriumVersion = "0.12.0"
+val kotlinLoggingVersion = "1.8.3"
+val kotlinVersion = "1.3.72"
 val logbackVersion = "1.2.3"
-val mockkVersion = "1.9.3"
-val spekVersion = "2.0.9"
+val mockkVersion = "1.10.0"
+val spekVersion = "2.0.12"
 
 plugins {
     application
     java
     `maven-publish`
-    kotlin("jvm") version "1.3.61"
-    id("com.github.johnrengelman.shadow") version "5.2.0"
-    id("org.jmailen.kotlinter") version "2.3.0"
+    kotlin("jvm") version "1.3.72"
+    id("com.github.johnrengelman.shadow") version "6.0.0"
+    id("org.jmailen.kotlinter") version "2.4.1"
 }
 
 application {
@@ -58,7 +58,7 @@ tasks {
         options.encoding = "UTF-8"
     }
     shadowJar {
-	archiveName = "MyApp.jar"
+        archiveFileName.set("MyApp.jar")
         manifest {
             attributes["Main-Class"] = "com.github.sylux6.kotlinjvmtemplate.AppKt"
         }
