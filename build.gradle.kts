@@ -1,7 +1,7 @@
 val atriumVersion = "0.12.0"
 val kotlinLoggingVersion = "1.8.3"
-val kotlinVersion = "1.3.72"
-val logbackVersion = "1.2.3"
+val kotlinVersion = "1.4.0"
+val logbackVersion = "1.3.0-alpha5"
 val mockkVersion = "1.10.0"
 val spekVersion = "2.0.12"
 
@@ -9,9 +9,9 @@ plugins {
     application
     java
     `maven-publish`
-    kotlin("jvm") version "1.3.72"
+    kotlin("jvm") version "1.4.0"
     id("com.github.johnrengelman.shadow") version "6.0.0"
-    id("org.jmailen.kotlinter") version "2.4.1"
+    id("org.jmailen.kotlinter") version "3.0.2"
 }
 
 application {
